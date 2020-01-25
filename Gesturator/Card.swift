@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct Card: View {
+  let tapped: Bool
+  
   var body: some View {
     VStack {
       Text("CARD")
@@ -16,13 +18,13 @@ struct Card: View {
         .foregroundColor(Color.white)
     }
     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-    .background(Color.purple)
+    .background(self.tapped ? Color.orange : Color.purple)
     .cornerRadius(30)
   }
 }
 
 struct Card_Previews: PreviewProvider {
   static var previews: some View {
-    Card()
+    Card(tapped: false)
   }
 }
