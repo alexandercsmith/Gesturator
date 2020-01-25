@@ -14,6 +14,7 @@ struct ContentView: View {
   
   var body: some View {
     Card(tapped: tapped)
+      .animation(.spring())
       .offset(y: self.cardDragState.height)
       .gesture(DragGesture()
         .onChanged { value in
