@@ -11,6 +11,11 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     Card()
+      .gesture(TapGesture(count: 1)
+        .onEnded({ () in
+          print("Tapped")
+        })
+      )
   }
 }
 
